@@ -157,8 +157,7 @@ export default {
           const response = await tmdbService.getMovie(this.movieId);
           this.movie = response.data;
           this.movieInfo = response.data
-          console.log(this.$route.query.myProp);
-          console.log(this.movie);
+
           const videoResponse = await tmdbService.getMovieVideos(this.movie.id);
           this.movieVideo = videoResponse.data.results[0] || {};
 
@@ -167,8 +166,6 @@ export default {
                map[language.iso_639_1] = language.english_name;
                return map;
           }, {});
-          console.log('Original language:', this.movie.original_language);
-          console.log('Language map:', this.languageMap, this.languageMap[this.movie.original_language]);
 
      },
 
@@ -473,86 +470,3 @@ export default {
      }
 }
 </style>
-
-<!-- {
-     "adult": false,
-     "backdrop_path": "/hMANgfPHR1tRObNp2oPiOi9mMlz.jpg",
-     "belongs_to_collection": null,
-     "budget": 135000000,
-     "genres": [
-         {
-             "id": 28,
-             "name": "Ação"
-         },
-         {
-             "id": 12,
-             "name": "Aventura"
-         },
-         {
-             "id": 878,
-             "name": "Ficção científica"
-         }
-     ],
-     "homepage": "",
-     "id": 424783,
-     "imdb_id": "tt4701182",
-     "original_language": "en",
-     "original_title": "Bumblebee",
-     "overview": "Cybertron foi derrotado. Quando Optimus Prime envia Bumblebee para defender a Terra, tem início sua jornada até se tornar um herói. Charlie Watson, uma adolescente que procura seu espaço no mundo, descobre e repara o robô, cheio de danos e disfarçado de Fusca. Enquanto os Decepticons caçam os Autobots sobreviventes, com a ajuda de uma agência secreta liderada pelo Agente Burns, Bumblebee e Charlie se unem para proteger o mundo.",
-     "popularity": 47.263,
-     "poster_path": "/x9vAcoPsyFQ6m3Re5S9DQSbudyi.jpg",
-     "production_companies": [@media screen and (max-width: 600px) {
-         {
-             "id": 4,
-             "logo_path": "/gz66EfNoYPqHTYI4q9UEN4CbHRc.png",
-             "name": "Paramount",
-             "origin_country": "US"
-         },
-         {
-             "id": 57031,
-             "logo_path": "/1ai3zndjxL3BonlOJVS75GjTOuW.png",
-             "name": "Allspark Pictures",
-             "origin_country": "US"
-         },
-         {
-             "id": 6734,
-             "logo_path": null,
-             "name": "Bay Films",
-             "origin_country": "US"
-         },
-         {
-             "id": 435,
-             "logo_path": "/AjzK0s2w1GtLfR4hqCjVSYi0Sr8.png",
-             "name": "di Bonaventura Pictures",
-             "origin_country": "US"
-         },
-         {
-             "id": 38831,
-             "logo_path": null,
-             "name": "Tom DeSanto/Don Murphy Production",
-             "origin_country": ""
-         }
-     ],
-     "production_countries": [
-         {
-             "iso_3166_1": "US",
-             "name": "United States of America"
-         }
-     ],
-     "release_date": "2018-12-15",
-     "revenue": 467989645,
-     "runtime": 114,
-     "spoken_languages": [
-         {
-             "english_name": "English",
-             "iso_639_1": "en",
-             "name": "English"
-         }
-     ],
-     "status": "Released",
-     "tagline": "Todo herói tem um começo.",
-     "title": "Bumblebee",
-     "video": false,
-     "vote_average": 6.726,
-     "vote_count": 5771
- } -->

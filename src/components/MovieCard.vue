@@ -124,11 +124,9 @@ export default {
                if (pageNum !== this.currentPage) {
                     this.currentPage = pageNum;
                     if ((this.currentPage + 1) * 10 >= this.movies.length && !this.filterActive) {
-                         console.log('sou o goToPage', this.movies);
                          const nextPageNumber = Math.floor(this.movies.length / 20) + 1;
                          const response = await tmdbService.getMovies(nextPageNumber);
                          this.movies = this.movies.concat(response.data.results.map(movie => ({ ...movie, showInfo: false })));
-                         console.log('sou o goToPage2', this.movies);
                     }
                }
           },

@@ -423,7 +423,6 @@ body {
      }
      .filter-checkbox {
           flex-direction: column;
-          /* align-items: center; */
      }
      .filter-certification {
           width: 100%;

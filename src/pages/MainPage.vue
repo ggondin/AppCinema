@@ -36,7 +36,6 @@ export default {
       }
 
       this.$refs.movieCard.movies = movies;
-      console.log(this.$refs.movieCard.movies);
       EventBus.emit('filter-changed', newQuery);
     },
 
@@ -56,12 +55,10 @@ export default {
       if (filteredQuery) {
         const movies = await this.fetchMoviesByFilter(filteredQuery);
         this.$refs.movieCard.movies = movies;
-        console.log(this.$refs.movieCard.movies);
         EventBus.emit('filter-changed', filteredQuery);
       } else {
         const response = await tmdbService.getMovies(1);
         this.$refs.movieCard.movies = response.data.results;
-        console.log(this.$refs.movieCard.movies);
         EventBus.emit('filter-changed', filteredQuery);
       }
     }
