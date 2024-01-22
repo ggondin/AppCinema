@@ -102,16 +102,17 @@
                               <div class="movie-detail-info2">
                                    <div class="movie-cards movie-detail-sizes-info2">
                                         <p class="info1-title">ORÇAMENTO</p>
-                                        <p class="info1-sub">${{ movie.budget }}</p>
+                                        <p class="info1-sub">${{ formatMoney(movie.budget) }}</p>
                                    </div>
                                    <div class="movie-cards movie-detail-sizes-info2">
                                         <p class="info1-title">RECEITA</p>
-                                        <p class="info1-sub">${{ movie.revenue }}</p>
+                                        <p class="info1-sub">${{ formatMoney(movie.revenue) }}</p>
                                    </div>
                                    <div class="movie-cards movie-detail-sizes-info2">
                                         <p class="info1-title">LUCRO</p>
-                                        <p class="info1-sub">${{ movie.budget - movie.revenue }}</p>
+                                        <p class="info1-sub">${{ formatMoney(movie.budget - movie.revenue) }}</p>
                                    </div>
+
 
                               </div>
                          </div>
@@ -148,6 +149,18 @@ export default {
           offset(vote_average) {
                const progress = vote_average / 10;
                return this.circumference * (1 - progress);
+          },
+          formatMoney(value) {
+               if (!value) {
+                    return 'Valores indisponiveis'; // ou qualquer valor padrão que você queira usar
+               }
+               if (value >= 1e9) {
+                    return (value / 1e9).toFixed(2) + 'B';
+               } else if (value >= 1e6) {
+                    return (value / 1e6).toFixed(2) + 'M';
+               } else {
+                    return value.toLocaleString('pt-BR');
+               }
           },
      },
      async mounted() {

@@ -52,7 +52,7 @@
 
 
           <button v-for="pageNum in pageNumbers()" :key="pageNum" @click="goToPage(pageNum)"
-               v-bind:class="{ 'next': pageNum !== currentPage, 'movie-card-next-page-button': true }">
+               v-bind:class="{ 'next': pageNum != currentPage, 'movie-card-next-page-button': true }">
                <p>{{ pageNum + 1 }}</p>
           </button>
 
@@ -266,7 +266,6 @@ text {
 }
 .movie-card-next-page-button:hover {
      transition: all 0.3s ease;
-     background: #9A5CD0;
 }
 .movie-card-next-page-button:active {
      background: #8457AA;
