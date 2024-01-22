@@ -152,7 +152,7 @@ export default {
           },
           formatMoney(value) {
                if (!value) {
-                    return 'Valores indisponiveis'; // ou qualquer valor padrão que você queira usar
+                    return 'Valores indisponiveis';
                }
                if (value >= 1e9) {
                     return (value / 1e9).toFixed(2) + 'B';
