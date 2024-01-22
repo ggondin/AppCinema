@@ -25,7 +25,7 @@ Executa o aplicativo no modo de desenvolvimento. Abra http://localhost:8080 para
 
 ### `npm run build`
 
-Compila e minifica o aplicativo para produção na pasta `dist`, recomendo que caso tente rodar o projeto use o http-server utilizando o comando `npm i http-server`
+Compila e minifica o aplicativo para produção na pasta `dist`, recomendo que caso tente rodar o projeto use o http-server utilizando o comando `npm i http-server`, após isso só acessar a pasta dist no terminal e executar `http-server`
 
 ### `npm run lint`
 
