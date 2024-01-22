@@ -105,9 +105,7 @@ export default {
                return this.circumference * (1 - progress);
           },
           async nextPage() {
-               if (!this.filterActive) {
-                    this.goToPage(this.currentPage + 1);
-               }
+               this.goToPage(this.currentPage + 1);
           },
           previousPage() {
                if (this.currentPage > 0) {
@@ -166,6 +164,7 @@ export default {
      border-radius: 4px;
      gap: 24px;
      background: rgba(235, 234, 248, 0.08);
+     width: 100%;
 }
 .movie-card {
      flex: 1 0 18%;
@@ -288,7 +287,7 @@ text {
 @media screen and (max-width: 600px) {
      .movie-card-content {
           display: flex;
-          width:  350px;
+          width: 350px;
           padding: 4px;
           justify-content: center;
           align-items: center;
@@ -358,7 +357,7 @@ text {
           justify-content: center;
           align-items: center;
      }
-     .skip{
+     .skip {
           width: 15%;
      }
      .movie-card-next-button svg {

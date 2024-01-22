@@ -94,7 +94,7 @@ export default {
      watch: {
           searchQuery: _.debounce(function (newQuery) {
                this.$emit('search-query-updated', newQuery);
-          }, 2000),
+          }, 1500),
           filteredMovies: _.debounce(function (filteredQuery) {
                this.$emit('search-query-filter', filteredQuery);
           }, 2000),
